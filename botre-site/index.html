@@ -54,18 +54,9 @@ p{margin:0}
 .btn.light:hover{background:#ffffff14}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--wine),var(--wine-soft));color:#fff}
-.hero-inner{max-width:1140px;margin:0 auto;padding:64px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.eyebrow{display:inline-block;border:1px solid #dcb982;border-radius:50px;padding:5px 14px;color:var(--gold-light);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px}
-.hero h1{font-size:clamp(40px,6vw,64px);margin-bottom:16px}
-.hero h1 em{color:var(--gold-light);font-style:italic}
-.hero .lede{max-width:560px;color:#f7e6e2;font-size:17px}
-.hero .tagline{margin-top:14px;font-size:13px;letter-spacing:4px;color:var(--gold-light);text-transform:uppercase}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.hero-art{position:relative;aspect-ratio:4/3;border-radius:48px;overflow:hidden;box-shadow:0 20px 50px #1f0c1670;border:1px solid #dcb98266;background:var(--wine-deep)}
-.hero-art img{position:absolute;inset:0;width:100%;height:100%}
-.hero-art .backdrop{object-fit:cover;filter:blur(28px) brightness(.8);transform:scale(1.15);opacity:.9}
-.hero-art .main{object-fit:contain}
+.hero{position:relative;overflow:hidden;margin:8px;height:calc(100vh - 16px);min-height:520px;border-radius:32px;background:var(--wine-deep)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* Sections */
 section.block{padding:72px 20px}
@@ -166,8 +157,7 @@ footer a{color:var(--gold-light)}
 
 /* Responsive */
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;padding:44px 20px}
-  .hero-art{max-width:520px;margin:0 auto;width:100%}
+  .hero{margin:6px;border-radius:24px}
   .services{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .strip .container{grid-template-columns:1fr 1fr}
@@ -208,22 +198,8 @@ footer a{color:var(--gold-light)}
 <main id="top">
 
 <section class="hero">
-  <div class="hero-inner">
-    <div>
-      <span class="eyebrow">Bespoke Saree Design Studio</span>
-      <h1>Your Dream Saree,<br><em>Designed Exclusively</em> for You</h1>
-      <p class="lede">From traditional Kanchipuram bridal silk to customised designer sarees and lehengas. Share your idea, choose every detail, and let BoTre bring your vision to life.</p>
-      <p class="tagline">Where tradition meets trend</p>
-      <div class="cta-row">
-        <a class="btn gold" href="#studio">Start Your Design</a>
-        <a class="btn light" href="https://wa.me/94707052118" target="_blank" rel="noopener">WhatsApp Us</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <img class="backdrop" src="assets/hero-saree.jpg" alt="" aria-hidden="true">
-      <img class="main" src="assets/hero-saree.jpg" alt="A bride in a blue zari saree, seated beside a peacock in a sunlit courtyard" width="1601" height="2000">
-    </div>
-  </div>
+  <h1 class="sr-only">BoTre – Design Your Dream Saree</h1>
+  <img src="assets/hero-saree.jpg" alt="A bride in a blue zari saree, seated beside a peacock in a sunlit courtyard" width="1601" height="2000">
 </section>
 
 <section class="block" id="services">
