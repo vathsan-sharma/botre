@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#531d35">
+<meta name="description" content="BoTre – Bold with Trendy. Personalised Kanchipuram bridal sarees, pattu sarees and customised lehengas, designed exclusively for you. Sri Lanka & UK.">
+<title>BoTre | Design Your Dream Saree</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#531d35;
+  --wine-deep:#311724;
+  --wine-soft:#82455d;
+  --gold:#b88a4b;
+  --gold-light:#e8cda8;
+  --cream:#fffaf5;
+  --paper:#ffffff;
+  --ink:#30232a;
+  --muted:#786a6e;
+  --line:#ecdcd3;
+  --radius:16px;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0}
+p{margin:0}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:10;background:var(--wine);color:#fff;box-shadow:0 2px 14px #31172422}
+.bar{max-width:1140px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.brand b{font:600 30px var(--serif);letter-spacing:2px}
+.brand span{font-size:11px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase}
+.nav{display:flex;gap:22px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:14px;letter-spacing:.5px;color:#f5e6dc;opacity:.9}
+.nav a:hover{opacity:1;color:var(--gold-light)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--wine);color:#fff;padding:14px 22px;border-radius:10px;font:500 15px var(--sans);letter-spacing:.3px;cursor:pointer;text-decoration:none;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px);background:var(--wine-soft)}
+.btn.gold{background:var(--gold);color:var(--wine-deep)}
+.btn.gold:hover{background:var(--gold-light)}
+.btn.outline{background:transparent;color:var(--wine);border:1px solid var(--wine)}
+.btn.outline:hover{background:#f8e8ed}
+.btn.light{background:transparent;color:#fff;border:1px solid #dcb982}
+.btn.light:hover{background:#ffffff14}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--wine),var(--wine-soft));color:#fff}
+.hero-inner{max-width:1140px;margin:0 auto;padding:64px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-block;border:1px solid #dcb982;border-radius:50px;padding:5px 14px;color:var(--gold-light);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,6vw,64px);margin-bottom:16px}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero .lede{max-width:560px;color:#f7e6e2;font-size:17px}
+.hero .tagline{margin-top:14px;font-size:13px;letter-spacing:4px;color:var(--gold-light);text-transform:uppercase}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-art{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px #1f0c1670;border:1px solid #dcb98266}
+.hero-art img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+
+/* Sections */
+section.block{padding:72px 20px}
+.container{max-width:1140px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.title{font-size:clamp(30px,4vw,44px);color:var(--wine);margin-bottom:12px}
+.sub{color:var(--muted);max-width:640px}
+.center{text-align:center}
+.center .sub{margin:auto}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.service{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:0 5px 18px #50233a08;display:flex;flex-direction:column;gap:12px}
+.service .icon{width:54px;height:54px;border-radius:50%;background:#f6e9e8;color:var(--wine);display:grid;place-items:center;font:600 24px var(--serif)}
+.service h3{font-size:26px;color:var(--wine)}
+.service p{color:var(--muted);font-size:15px}
+.service ul{margin:4px 0 0;padding-left:18px;color:var(--ink);font-size:14px}
+.service ul li{margin-bottom:4px}
+.service .note{margin-top:auto;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+
+/* Extra product strip */
+.strip{background:var(--wine-deep);color:#f7e7df}
+.strip .container{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.strip .item{padding:22px 10px;border-left:1px solid #b88a4b44}
+.strip .item:first-child{border-left:0}
+.strip .item b{display:block;font:500 22px var(--serif);color:var(--gold-light);margin-bottom:6px}
+.strip .item span{font-size:14px;color:#dcc6bd}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;counter-reset:step}
+.step{padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);position:relative}
+.step::before{counter-increment:step;content:"0" counter(step);font:500 34px var(--serif);color:var(--gold);display:block;margin-bottom:8px}
+.step h3{font-size:22px;color:var(--wine);margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+
+/* Studio */
+.studio{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.brief-intro{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px;margin:32px 0 22px}
+.brief-intro strong{font:600 22px var(--serif);color:var(--wine);display:block;margin-bottom:6px}
+.progress{height:7px;background:#eadeda;border-radius:10px;overflow:hidden;margin-top:14px}
+.fill{height:100%;background:var(--gold);width:0;transition:width .2s}
+.status{font-size:13px;color:var(--muted);margin-top:8px}
+#designer{display:block}
+.section{background:#fff;border:1px solid #e9dcd4;border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:0 5px 18px #50233a08}
+.head{display:flex;gap:12px;align-items:center;margin-bottom:15px}
+.num{background:#f6e9e8;color:var(--wine);padding:7px 10px;border-radius:8px;font-weight:600;font-size:14px}
+.head h2{font:500 26px var(--serif);margin:0;color:var(--wine)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{border:1px solid #dccdc7;border-radius:40px;padding:9px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;user-select:none;background:#fff;font-size:14px}
+.chip input{accent-color:var(--wine)}
+.chip:has(input:checked){background:#f8e8ed;border-color:var(--wine);color:var(--wine)}
+label.field{display:block;font-weight:500;font-size:13px;margin:16px 0 6px;letter-spacing:.3px}
+textarea,input[type=text],input[type=url],input[type=date],input[type=email],select{width:100%;border:1px solid #d9cac7;border-radius:9px;padding:12px;background:#fff;font:inherit;color:var(--ink)}
+textarea:focus,input:focus,select:focus{outline:2px solid #e8cda8;border-color:var(--gold)}
+textarea{min-height:75px;resize:vertical}
+.help{font-size:12px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.upload{display:block;padding:13px;border:1px dashed var(--gold);border-radius:10px;background:#fffaf4;font-size:13px;cursor:pointer}
+.upload input{display:block;margin-top:7px;max-width:100%}
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.notice{background:#fff3e1;border-left:3px solid var(--gold);padding:12px 14px;margin-top:14px;font-size:13px;border-radius:4px}
+#feedback{margin-top:12px;font-size:14px;color:var(--wine)}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.card h3{font-size:26px;color:var(--wine);margin-bottom:10px}
+.card p{color:var(--muted);margin-bottom:14px}
+.wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:13px 20px;border-radius:10px;font-weight:500;text-decoration:none}
+.wa:hover{background:#1ebe5a}
+.reach{list-style:none;padding:0;margin:0;color:var(--ink)}
+.reach li{padding:8px 0;border-bottom:1px solid var(--line)}
+.reach li:last-child{border-bottom:0}
+.reach small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+
+footer{background:var(--wine-deep);color:#f7e7df;padding:34px 20px;text-align:center;font-size:14px}
+footer b{font:600 26px var(--serif);letter-spacing:2px;color:#fff}
+footer .tag{color:var(--gold-light);letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:6px 0 14px}
+footer a{color:var(--gold-light)}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:44px 20px}
+  .hero-art{max-width:520px;margin:0 auto;width:100%}
+  .services{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .strip .container{grid-template-columns:1fr 1fr}
+  .strip .item:nth-child(3){border-left:0}
+  .contact{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .nav{display:none}
+  .grid{grid-template-columns:1fr}
+  .section{padding:17px}
+  .steps{grid-template-columns:1fr}
+  .strip .container{grid-template-columns:1fr}
+  .strip .item{border-left:0;border-top:1px solid #b88a4b44}
+  .strip .item:first-child{border-top:0}
+  .brand span{display:none}
+  section.block{padding:52px 16px}
+  .head h2{font-size:22px}
+  .btn{width:100%;justify-content:center}
+  .cta-row .wa{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="BoTre home"><b>BoTre</b><span>Bold with Trendy</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#studio">Design Studio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Bespoke Saree Design Studio</span>
+      <h1>Your Dream Saree,<br><em>Designed Exclusively</em> for You</h1>
+      <p class="lede">From traditional Kanchipuram bridal silk to customised designer sarees and lehengas. Share your idea, choose every detail, and let BoTre bring your vision to life.</p>
+      <p class="tagline">Where tradition meets trend</p>
+      <div class="cta-row">
+        <a class="btn gold" href="#studio">Start Your Design</a>
+        <a class="btn light" href="https://wa.me/94707052118" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/botre-poster.webp" alt="BoTre bridal sarees and customised lehengas in silk, zari and embroidery" width="1254" height="1254">
+    </div>
+  </div>
+</section>
+
+<section class="block" id="services">
+  <div class="container">
+    <div class="center">
+      <p class="kicker">What we create</p>
+      <h2 class="title">Crafted for your celebration</h2>
+      <p class="sub">Every piece is personalised with you in mind, from the weave and colour to the motifs and finishing.</p>
+    </div>
+    <div class="services">
+      <article class="service">
+        <div class="icon">B</div>
+        <h3>Personalised Bridal Sarees</h3>
+        <p>Your wedding saree, designed around your story, families and traditions.</p>
+        <ul>
+          <li>Traditional Kanchipuram bridal silk</li>
+          <li>Personalised zari motifs and initials</li>
+          <li>Engagement and reception sarees</li>
+        </ul>
+        <span class="note">Bridal &amp; occasion</span>
+      </article>
+      <article class="service">
+        <div class="icon">K</div>
+        <h3>Traditional Kanchipuram Pattu Sarees</h3>
+        <p>Premium pattu sarees with classic temple borders, rich korvai and heirloom-quality zari.</p>
+        <ul>
+          <li>Pure silk, hand-woven finish</li>
+          <li>Temple, peacock and floral borders</li>
+          <li>Gold, silver and rose-gold zari</li>
+        </ul>
+        <span class="note">Heritage weaves</span>
+      </article>
+      <article class="service">
+        <div class="icon">L</div>
+        <h3>Customised Lehengas</h3>
+        <p>Bridal and non-bridal lehengas in all styles, cut and embellished to your brief.</p>
+        <ul>
+          <li>Bridal and non-bridal designs</li>
+          <li>Zardosi, aari, bead and pearl work</li>
+          <li>Party wear and festive edits</li>
+        </ul>
+        <span class="note">All styles</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Also available">
+  <div class="container">
+    <div class="item"><b>Bridal</b><span>Muhurtham &amp; wedding sarees</span></div>
+    <div class="item"><b>Engagement</b><span>Reception &amp; engagement looks</span></div>
+    <div class="item"><b>Festive</b><span>Party wear &amp; celebration</span></div>
+    <div class="item"><b>Embroidery</b><span>Personalised designs &amp; motifs</span></div>
+  </div>
+</section>
+
+<section class="block" id="process">
+  <div class="container">
+    <div class="center">
+      <p class="kicker">How it works</p>
+      <h2 class="title">From idea to heirloom</h2>
+      <p class="sub">A simple, personal process from first conversation to delivery.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Share your vision</h3>
+        <p>Tell us the occasion, colours and motifs, or send a Pinterest or Instagram reference.</p>
+      </div>
+      <div class="step">
+        <h3>Design consultation</h3>
+        <p>Our team reviews your brief and suggests fabrics, borders and finishes that suit you.</p>
+      </div>
+      <div class="step">
+        <h3>Quotation &amp; crafting</h3>
+        <p>Receive a detailed quote, approve the design, then we weave, embroider and finish.</p>
+      </div>
+      <div class="step">
+        <h3>Delivered to you</h3>
+        <p>Packed in a gift box, delivered across Sri Lanka and to the UK.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block studio" id="studio">
+  <div class="container">
+    <div class="center">
+      <p class="kicker">Design Studio</p>
+      <h2 class="title">Create your personalised design brief</h2>
+      <p class="sub">Choose one or more options in each section, or write your own preferences. All sections are optional. Our team reviews your design before a quotation is provided.</p>
+    </div>
+
+    <div class="brief-intro">
+      <strong>Your design brief</strong>
+      <p>Your answers are compiled into a brief you can send on WhatsApp or download. Reference photos stay on your device, so attach them in the WhatsApp chat.</p>
+      <div class="progress"><div class="fill" id="bar"></div></div>
+      <div class="status" id="status">0 of 13 design sections started</div>
+    </div>
+
+    <form id="designer" onsubmit="return false"></form>
+
+    <section class="section" aria-labelledby="final-title">
+      <div class="head"><span class="num">14</span><h2 id="final-title">Final Requirements &amp; Contact</h2></div>
+      <div class="grid">
+        <div>
+          <label class="field" for="budget">Estimated budget</label>
+          <select id="budget">
+            <option>Need a quotation</option>
+            <option>Under LKR 50,000</option>
+            <option>LKR 50,000–100,000</option>
+            <option>LKR 100,000–200,000</option>
+            <option>LKR 200,000–400,000</option>
+            <option>LKR 400,000+</option>
+          </select>
+        </div>
+        <div>
+          <label class="field" for="date">Preferred delivery date</label>
+          <input type="date" id="date">
+        </div>
+        <div>
+          <label class="field" for="customer">Your name</label>
+          <input type="text" id="customer" placeholder="Full name" autocomplete="name">
+        </div>
+        <div>
+          <label class="field" for="contact">Email or phone</label>
+          <input type="text" id="contact" placeholder="Your contact details" autocomplete="tel">
+        </div>
+        <div>
+          <label class="field" for="country">Delivery country</label>
+          <select id="country">
+            <option>Sri Lanka</option>
+            <option>United Kingdom</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <label class="field" for="extra">Other design instructions</label>
+      <textarea id="extra" placeholder="Tell us anything else about your dream saree..."></textarea>
+      <div class="notice">Reference photo uploads stay on your device in this version. To share photos with BoTre, attach them manually in the WhatsApp conversation after sending your design brief.</div>
+      <div class="buttons">
+        <button type="button" class="btn gold" id="whatsapp">Send Enquiry via WhatsApp ↗</button>
+        <button type="button" class="btn outline" id="copy">Copy Design Brief</button>
+        <button type="button" class="btn outline" id="download">Download Design Brief</button>
+      </div>
+      <p class="help" id="feedback" aria-live="polite"></p>
+    </section>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="container">
+    <div class="center">
+      <p class="kicker">Get in touch</p>
+      <h2 class="title">Let’s design together</h2>
+      <p class="sub">Chat with us on WhatsApp for a personal design consultation, or send us a message on Instagram.</p>
+    </div>
+    <div class="contact">
+      <div class="card">
+        <h3>WhatsApp</h3>
+        <p>The fastest way to reach our team for consultations, quotes and orders.</p>
+        <a class="wa" href="https://wa.me/94707052118" target="_blank" rel="noopener">Chat on WhatsApp · +94 70 705 2118</a>
+      </div>
+      <div class="card">
+        <h3>Visit &amp; reach us</h3>
+        <ul class="reach">
+          <li><small>WhatsApp</small>+94 70 705 2118</li>
+          <li><small>Instagram</small>DM us for personalised design consultations and orders</li>
+          <li><small>Serving</small>Sri Lanka, United Kingdom &amp; worldwide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <b>BoTre</b>
+  <div class="tag">Bold with Trendy · Where tradition meets trend</div>
+  <div>WhatsApp: <a href="https://wa.me/94707052118" target="_blank" rel="noopener">+94 70 705 2118</a> · Sri Lanka &amp; UK enquiries</div>
+  <div style="margin-top:10px;opacity:.7">© BoTre. All rights reserved.</div>
+</footer>
+
+<script>
+const sections=[
+  ['Occasion & Saree Style',['Bridal Muhurtham','Engagement','Reception','Festive','Party Wear','Traditional','Contemporary','Other'],'Describe your occasion and preferred style.'],
+  ['Fabric & Weaving',['Pure Kanchipuram Silk','Soft Silk','Silk Cotton','Banarasi Silk','Organza','Tissue Silk','Chiffon','Georgette','Crepe','Other'],'Preferred material, weave, weight and texture.'],
+  ['Saree Body Colour',['Traditional Red','Maroon','Emerald Green','Royal Blue','Rose Pink','Ivory','Mustard Gold','Lavender','Peach','Other'],'Enter exact shade or colour codes.'],
+  ['Colour Combination',['Single Colour','Contrast Border','Dual Tone','Triple Colour','Ombre Gradient','Pastel Combination','Custom Combination'],'Describe body, border and pallu colours.'],
+  ['Saree Body Pattern',['Plain Silk','Checks','Stripes','Buttas','Floral Motifs','Peacock Motifs','Traditional Motifs','Geometric Patterns','Custom Pattern'],'Preferred motif size, density and placement.'],
+  ['Border Design',['Temple Border','Floral Zari','Peacock Border','Traditional Korvai','Broad Contrast Border','Minimal Zari Border','Borderless','Custom Border'],'Describe preferred border artwork.'],
+  ['Border Width',['Borderless','Narrow (1–2 inches)','Medium (3–5 inches)','Broad (6–8 inches)','Extra Broad (9+ inches)','Custom Width'],'Exact measurements or asymmetric borders.'],
+  ['Pallu Design',['Grand Zari Pallu','Traditional Motif Pallu','Floral Pallu','Peacock Pallu','Contrast Pallu','Minimal Pallu','Custom Artwork'],'Pallu motifs, arrangement, colours and length.'],
+  ['Zari & Metallic Finish',['Traditional Gold Zari','Silver Zari','Rose Gold Zari','Antique Gold','Dual Zari','No Zari','Custom Finish'],'Metallic tone, material and finish.'],
+  ['Personalised Artwork & Motifs',['Bride & Groom Initials','Names','Wedding Date','Temple Architecture','Traditional Symbols','Family Motif','Custom Illustration','No Personalisation'],'Text, illustrations and motif placement.'],
+  ['Embroidery & Embellishments',['No Embellishments','Hand Embroidery','Zardosi','Aari Work','Bead Work','Pearl Work','Sequins','Stone Work','Custom Embellishments'],'Detailing, materials and placement.'],
+  ['Saree Length & Dimensions',['Standard 5.5 Metres','6 Metres','9-Yard Traditional','Custom Length'],'Custom length, width and pallu size.'],
+  ['Finishing & Packaging',['Classic Tassels','Decorative Tassels','Fall & Pico','Luxury Gift Box','Bridal Packaging','Custom Finishing'],'Finishing and packaging preferences.']
+];
+
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const form=document.querySelector('#designer');
+
+sections.forEach((s,i)=>{
+  const el=document.createElement('section');
+  el.className='section';
+  el.innerHTML=`<div class="head"><span class="num">${String(i+1).padStart(2,'0')}</span><h2>${esc(s[0])}</h2></div>`+
+    `<div class="chips">${s[1].map(o=>`<label class="chip"><input type="checkbox" name="choice-${i}" value="${esc(o)}">${esc(o)}</label>`).join('')}</div>`+
+    `<label class="field" for="note-${i}">Your preference / special request</label><textarea id="note-${i}" placeholder="${esc(s[2])}"></textarea>`+
+    `<label class="field" for="ref-${i}">Reference image, Pinterest or Instagram link</label><input type="url" id="ref-${i}" placeholder="https://...">`+
+    `<label class="field" for="photo-${i}">Optional reference photo from your device</label><label class="upload">Select an inspiration image<input type="file" id="photo-${i}" accept="image/*"></label>`+
+    `<div class="help">Photo is not automatically uploaded or sent.</div>`;
+  form.append(el);
+});
+
+const v=id=>document.getElementById(id).value.trim();
+
+function brief(){
+  return 'BoTre – CUSTOM SAREE DESIGN ENQUIRY\n\n'+
+    sections.map((s,i)=>`${i+1}. ${s[0]}\nSelections: ${[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value).join(', ')||'Designer guidance needed'}\nMy preference: ${v('note-'+i)||'Not specified'}\nReference link: ${v('ref-'+i)||'Not supplied'}\nPhoto selected: ${document.getElementById('photo-'+i).files[0]?.name||'None (send separately)'}`).join('\n\n')+
+    `\n\nBudget: ${v('budget')}\nRequired by: ${v('date')||'Flexible'}\nAdditional instructions: ${v('extra')||'None'}\nName: ${v('customer')||'Not supplied'}\nContact: ${v('contact')||'Not supplied'}\nDelivery country: ${v('country')}\n\nReference images must be attached separately in WhatsApp.`;
+}
+
+function progress(){
+  const n=sections.filter((s,i)=>document.querySelector(`input[name="choice-${i}"]:checked`)||v('note-'+i)||v('ref-'+i)||document.getElementById('photo-'+i).files.length).length;
+  document.getElementById('bar').style.width=n/sections.length*100+'%';
+  document.getElementById('status').textContent=n+' of '+sections.length+' design sections started';
+}
+document.addEventListener('input',progress);
+document.addEventListener('change',progress);
+
+document.getElementById('whatsapp').onclick=()=>{
+  const msg=brief();
+  if(msg.length>7000){
+    document.getElementById('feedback').textContent='Your design is very detailed. Please use Download Design Brief and attach the file in WhatsApp.';
+    window.open('https://wa.me/94707052118','_blank','noopener');
+    return;
+  }
+  window.open('https://wa.me/94707052118?text='+encodeURIComponent(msg),'_blank','noopener');
+};
+
+document.getElementById('copy').onclick=async()=>{
+  try{
+    await navigator.clipboard.writeText(brief());
+    document.getElementById('feedback').textContent='Design brief copied.';
+  }catch(e){
+    document.getElementById('feedback').textContent='Copy is unavailable here. Please download your design brief instead.';
+  }
+};
+
+document.getElementById('download').onclick=()=>{
+  const blob=new Blob([brief()],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='BoTre-Custom-Saree-Design.txt';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+</script>
+</body>
+</html>
