@@ -144,6 +144,24 @@ footer b{font:600 26px var(--serif);letter-spacing:2px;color:#fff}
 footer .tag{color:var(--gold-light);letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:6px 0 14px}
 footer a{color:var(--gold-light)}
 
+.example{font-size:13px;color:var(--muted);background:#fffaf4;border-left:3px solid var(--gold);padding:8px 12px;margin:14px 0 0;border-radius:4px}
+.example b{color:var(--wine)}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:1px solid #0002;flex:none}
+.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 4px}
+.preset{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:left;display:flex;flex-direction:column;gap:6px;cursor:pointer;font:inherit;transition:border-color .2s,box-shadow .2s}
+.preset:hover{border-color:var(--gold);box-shadow:0 6px 18px #50233a14}
+.preset strong{font:500 21px var(--serif);color:var(--wine)}
+.preset span{font-size:14px;color:var(--muted)}
+.summary{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-top:16px}
+.summary[hidden]{display:none}
+.sum-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.sum-row:last-child{border-bottom:0}
+.sum-row b{font-size:14px;color:var(--wine)}
+.sum-row p{font-size:14px;color:var(--ink);margin-top:6px}
+.pick{display:inline-block;background:#f8e8ed;color:var(--wine);border-radius:40px;padding:4px 11px;margin:6px 6px 0 0;font-size:13px}
+.sum-row em{color:var(--muted);font-size:14px}
+.chip{display:inline-flex;align-items:center;gap:7px}
+
 /* Responsive */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;padding:44px 20px}
@@ -165,6 +183,7 @@ footer a{color:var(--gold-light)}
   .brand span{display:none}
   section.block{padding:52px 16px}
   .head h2{font-size:22px}
+  .presets{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center}
   .cta-row .wa{width:100%;justify-content:center}
 }
@@ -301,6 +320,13 @@ footer a{color:var(--gold-light)}
       <div class="status" id="status">0 of 13 design sections started</div>
     </div>
 
+    <div class="presets-wrap">
+      <p class="kicker">Start from a look</p>
+      <p class="help">Pick a starting point and adjust anything you like below. You can skip this and start from scratch.</p>
+      <div class="presets" id="presets"></div>
+      <p class="help" id="preset-msg" aria-live="polite"></p>
+    </div>
+
     <form id="designer" onsubmit="return false"></form>
 
     <section class="section" aria-labelledby="final-title">
@@ -341,8 +367,10 @@ footer a{color:var(--gold-light)}
       <label class="field" for="extra">Other design instructions</label>
       <textarea id="extra" placeholder="Tell us anything else about your dream saree..."></textarea>
       <div class="notice">Reference photo uploads stay on your device in this version. To share photos with BoTre, attach them manually in the WhatsApp conversation after sending your design brief.</div>
+      <div class="summary" id="summary" hidden></div>
       <div class="buttons">
         <button type="button" class="btn gold" id="whatsapp">Send Enquiry via WhatsApp ↗</button>
+        <button type="button" class="btn outline" id="review">Review My Brief</button>
         <button type="button" class="btn outline" id="copy">Copy Design Brief</button>
         <button type="button" class="btn outline" id="download">Download Design Brief</button>
       </div>
@@ -402,6 +430,30 @@ const sections=[
   ['Finishing & Packaging',['Classic Tassels','Decorative Tassels','Fall & Pico','Luxury Gift Box','Bridal Packaging','Custom Finishing'],'Finishing and packaging preferences.']
 ];
 
+const examples=[
+  'Muhurtham on the wedding day, in a traditional style with a family heirloom colour.',
+  'Pure Kanchipuram silk with a heavy, lustrous weave for a bridal look.',
+  'Ruby red, or the exact shade from a fabric swatch or photo.',
+  'Maroon body with a gold border and a green pallu.',
+  'Small scattered buttas across the body, with no large motifs.',
+  'A temple border in gold zari, or a peacock border.',
+  'Medium (3–5 inches) on the body, slightly broader on the pallu.',
+  'A grand zari pallu with a traditional motif, about a foot long.',
+  'Antique gold zari with a matte finish.',
+  'Bride and groom initials woven into the pallu.',
+  'Hand embroidery along the border only, nothing on the body.',
+  '6 metres, or a 9-yard drape if that is what your family wears.',
+  'Bridal packaging with a luxury gift box and decorative tassels.'
+];
+
+const swatches={'Traditional Red':'#b3262c','Maroon':'#6b1d2a','Emerald Green':'#0f6b57','Royal Blue':'#1f4fa3','Rose Pink':'#e8a0b4','Ivory':'#f7f1e1','Mustard Gold':'#c9962b','Lavender':'#b9a3d6','Peach':'#f5c09a'};
+
+const presets=[
+  {name:'Classic Bridal Muhurtham',desc:'Traditional red silk, temple border, gold zari',picks:{0:['Bridal Muhurtham','Traditional'],1:['Pure Kanchipuram Silk'],2:['Traditional Red'],3:['Contrast Border'],4:['Traditional Motifs'],5:['Temple Border'],6:['Medium (3–5 inches)'],7:['Grand Zari Pallu'],8:['Traditional Gold Zari'],9:['Bride & Groom Initials'],10:['Hand Embroidery'],11:['6 Metres'],12:['Bridal Packaging','Luxury Gift Box']}},
+  {name:'Modern Engagement',desc:'Soft rose pink, minimal border, light sequins',picks:{0:['Engagement','Contemporary'],1:['Soft Silk'],2:['Rose Pink'],3:['Ombre Gradient'],4:['Floral Motifs'],5:['Minimal Zari Border'],6:['Narrow (1–2 inches)'],7:['Minimal Pallu'],8:['Rose Gold Zari'],9:['No Personalisation'],10:['Sequins'],11:['Standard 5.5 Metres'],12:['Decorative Tassels']}},
+  {name:'Festive Party Wear',desc:'Emerald green georgette with floral zari',picks:{0:['Party Wear','Festive'],1:['Georgette'],2:['Emerald Green'],3:['Dual Tone'],4:['Buttas'],5:['Floral Zari'],6:['Narrow (1–2 inches)'],7:['Floral Pallu'],8:['Silver Zari'],9:['No Personalisation'],10:['Bead Work'],11:['Standard 5.5 Metres'],12:['Classic Tassels']}}
+];
+
 const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const form=document.querySelector('#designer');
 
@@ -409,8 +461,8 @@ sections.forEach((s,i)=>{
   const el=document.createElement('section');
   el.className='section';
   el.innerHTML=`<div class="head"><span class="num">${String(i+1).padStart(2,'0')}</span><h2>${esc(s[0])}</h2></div>`+
-    `<div class="chips">${s[1].map(o=>`<label class="chip"><input type="checkbox" name="choice-${i}" value="${esc(o)}">${esc(o)}</label>`).join('')}</div>`+
-    `<label class="field" for="note-${i}">Your preference / special request</label><textarea id="note-${i}" placeholder="${esc(s[2])}"></textarea>`+
+    `<div class="chips">${s[1].map(o=>`<label class="chip"><input type="checkbox" name="choice-${i}" value="${esc(o)}">${swatches[o]?`<i class="dot" style="background:${swatches[o]}"></i>`:''}${esc(o)}</label>`).join('')}</div>`+
+    `<p class="example"><b>Example:</b> ${esc(examples[i])}</p><label class="field" for="note-${i}">Your preference / special request</label><textarea id="note-${i}" placeholder="${esc(s[2])}"></textarea>`+
     `<label class="field" for="ref-${i}">Reference image, Pinterest or Instagram link</label><input type="url" id="ref-${i}" placeholder="https://...">`+
     `<label class="field" for="photo-${i}">Optional reference photo from your device</label><label class="upload">Select an inspiration image<input type="file" id="photo-${i}" accept="image/*"></label>`+
     `<div class="help">Photo is not automatically uploaded or sent.</div>`;
@@ -432,6 +484,39 @@ function progress(){
 }
 document.addEventListener('input',progress);
 document.addEventListener('change',progress);
+
+const presetBox=document.getElementById('presets');
+presets.forEach(p=>{
+  const b=document.createElement('button');
+  b.type='button';
+  b.className='preset';
+  b.innerHTML=`<strong>${esc(p.name)}</strong><span>${esc(p.desc)}</span>`;
+  b.onclick=()=>applyPreset(p);
+  presetBox.append(b);
+});
+
+function applyPreset(p){
+  document.querySelectorAll('input[type=checkbox][name^="choice-"]').forEach(c=>c.checked=false);
+  Object.entries(p.picks).forEach(([i,opts])=>opts.forEach(o=>{
+    const c=document.querySelector(`input[name="choice-${i}"][value="${CSS.escape(o)}"]`);
+    if(c) c.checked=true;
+  }));
+  progress();
+  document.getElementById('preset-msg').textContent=`"${p.name}" applied. Adjust anything you like in the sections below.`;
+}
+
+document.getElementById('review').onclick=()=>{
+  const box=document.getElementById('summary');
+  box.innerHTML=sections.map((s,i)=>{
+    const picks=[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value);
+    const note=v('note-'+i);
+    return `<div class="sum-row"><b>${String(i+1).padStart(2,'0')} · ${esc(s[0])}</b>`+
+      `<div>${picks.length?picks.map(p=>`<span class="pick">${esc(p)}</span>`).join(''):'<em>Designer guidance needed</em>'}</div>`+
+      (note?`<p>${esc(note)}</p>`:'')+`</div>`;
+  }).join('');
+  box.hidden=false;
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+};
 
 document.getElementById('whatsapp').onclick=()=>{
   const msg=brief();
