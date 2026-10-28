@@ -4,9 +4,9 @@ document.documentElement.classList.add('js');
 
 (function () {
   const targets = document.querySelectorAll(
-    '.eyebrow, .display, .lede, .tile.wide, .craft-img, .brief-intro, .section-card, .presets-wrap, .contact .card'
+    '.eyebrow, .display, .lede, .tile.wide, .craft-img, .brief-intro, .section-card, .presets-wrap, .contact .card, .trust-line, .trust-sub, .cta-card'
   );
-  const groups = document.querySelectorAll('.steps, .gallery, .occasion-row, .tile-row, .contact-grid, .presets');
+  const groups = document.querySelectorAll('.steps, .gallery, .occasion-row, .tile-row, .contact-grid, .presets, .feature-grid, .why-grid, .faq-list, .story-row');
 
   const items = new Set(targets);
   groups.forEach(group => {
