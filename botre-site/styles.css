@@ -225,3 +225,18 @@ footer a:hover{text-decoration:underline}
   .gal-item span{left:14px;bottom:12px;font-size:11px}
   .page-banner img{height:200px}
 }
+
+/* Motion */
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.hero>img{animation:kenburns 20s ease-out backwards}
+.hero-logo{animation:fadeDown .9s .1s backwards}
+.hero-copy h1{animation:rise 1s .25s backwards}
+.hero-copy .btn{animation:rise 1s .5s backwards}
+html.js .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html.js .reveal{opacity:1;transform:none}
+}
