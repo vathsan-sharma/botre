@@ -182,3 +182,46 @@ footer a:hover{text-decoration:underline}
 .page-header img{width:120px;height:auto;display:block}
 .page-header .link{font-size:15px}
 .page-title{padding-top:40px}
+
+/* Craft */
+.craft{padding:120px 24px;background:var(--bg)}
+.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.craft-text .lede{max-width:520px}
+.craft-text .link{display:inline-block;margin-top:28px}
+.craft-media{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.craft-img{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--bg-2)}
+.craft-img img{width:100%;height:100%;object-fit:cover;display:block}
+.craft-img.tall{grid-row:span 2;aspect-ratio:3/4}
+.craft-img:not(.tall){aspect-ratio:1/1}
+
+/* Colours gallery */
+.colours{padding:120px 24px;background:var(--bg-2)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.gal-item{position:relative;margin:0;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--bg)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gal-item:hover img{transform:scale(1.03)}
+.gal-item::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(transparent,#0000007a)}
+.gal-item span{position:absolute;left:20px;bottom:18px;z-index:1;color:#fff;font-family:var(--label);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+
+/* Occasions */
+.occasions{padding:120px 24px;background:var(--bg)}
+.occasion-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.occasion-row .tile-media{height:340px}
+
+/* Design page banner */
+.page-banner{max-width:1120px;margin:0 auto;padding:0 24px}
+.page-banner img{display:block;width:100%;height:320px;object-fit:cover;border-radius:var(--radius)}
+
+@media(max-width:900px){
+  .craft-grid{grid-template-columns:1fr;gap:48px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .occasion-row{grid-template-columns:1fr}
+  .occasion-row .tile-media{height:300px}
+}
+@media(max-width:650px){
+  .craft,.colours,.occasions{padding:88px 20px}
+  .gallery{gap:10px}
+  .gal-item{aspect-ratio:3/4}
+  .gal-item span{left:14px;bottom:12px;font-size:11px}
+  .page-banner img{height:200px}
+}
