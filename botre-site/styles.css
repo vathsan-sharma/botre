@@ -253,3 +253,16 @@ h1,h2,h3,.preset strong,.head h2,.tile h3,.card h3,.feature h3,.brief-intro stro
 .display{font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05}
 .hero-copy h1{font-weight:400;font-size:clamp(44px,6.4vw,80px);line-height:1.05}
 .tile h3{font-size:clamp(30px,3.4vw,44px)}
+
+/* Minimal hero: small headline bottom-left, quiet text link */
+.hero::after{background:linear-gradient(0deg,#0000008c 0%,#00000000 45%)}
+.hero-copy{justify-content:flex-end;align-items:flex-start;text-align:left;gap:20px;padding:0 clamp(24px,5vw,64px) clamp(44px,9vh,88px)}
+.hero-copy h1{font-size:clamp(28px,3.4vw,46px);font-weight:400;line-height:1.15;letter-spacing:0;text-shadow:0 1px 16px #00000050}
+.hero-copy .btn{background:none;color:#fff;padding:0 0 6px;border-radius:0;box-shadow:none;border-bottom:1px solid #ffffffb3;font-size:12px;letter-spacing:.2em;width:auto}
+.hero-copy .btn:hover{background:none;border-bottom-color:#fff;transform:none}
+.hero-logo{top:28px;left:28px}
+@media(max-width:650px){
+  .hero-copy{gap:16px;padding:0 24px 40px}
+  .hero-copy h1{font-size:clamp(26px,7.4vw,34px)}
+  .hero-logo{top:18px;left:18px}
+}
