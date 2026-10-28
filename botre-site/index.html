@@ -12,16 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1d1d1f;
-  --muted:#6e6e73;
+  --ink:#1a1f2b;
+  --muted:#667085;
   --bg:#ffffff;
-  --bg-2:#f5f5f7;
-  --line:#d2d2d7;
-  --teal:#0b7a85;
-  --teal-deep:#075a62;
-  --teal-tint:#e6f2f3;
+  --bg-2:#f7f4ef;
+  --line:#dcd6cc;
+  --accent:#1f4f8f;
+  --accent-deep:#163c70;
+  --accent-tint:#e8eef8;
   --gold:#b8862f;
-  --dark:#000000;
+  --dark:#0c1a2e;
+  --dark-card:#162842;
+  --dark-line:#26395a;
+  --dark-muted:#a9b6cc;
   --radius:28px;
   --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
 }
@@ -35,13 +38,13 @@ p{margin:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* Buttons and links */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:var(--teal);color:#fff;padding:13px 24px;border-radius:980px;font:500 17px var(--font);cursor:pointer;text-decoration:none;transition:background .2s,transform .2s}
-.btn:hover{background:var(--teal-deep)}
-.btn.outline{background:transparent;color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal)}
-.btn.outline:hover{background:var(--teal-tint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:var(--accent);color:#fff;padding:13px 24px;border-radius:980px;font:500 17px var(--font);cursor:pointer;text-decoration:none;transition:background .2s,transform .2s}
+.btn:hover{background:var(--accent-deep)}
+.btn.outline{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.btn.outline:hover{background:var(--accent-tint)}
 .btn.whatsapp{background:#25d366;color:#04230f}
 .btn.whatsapp:hover{background:#1fbd5a}
-.link{color:var(--teal);text-decoration:none;font-size:17px;font-weight:500}
+.link{color:var(--accent);text-decoration:none;font-size:17px;font-weight:500}
 .link:hover{text-decoration:underline}
 
 /* Hero */
@@ -58,7 +61,7 @@ p{margin:0}
 .section{padding:120px 24px}
 .wrap{max-width:1120px;margin:0 auto}
 .narrow{max-width:760px}
-.eyebrow{font-size:17px;font-weight:600;color:var(--teal);margin-bottom:12px}
+.eyebrow{font-size:17px;font-weight:600;color:var(--accent);margin-bottom:12px}
 .display{font-size:clamp(40px,5.4vw,64px);font-weight:600;letter-spacing:-.035em}
 .lede{font-size:clamp(19px,2vw,24px);line-height:1.4;color:var(--muted);margin-top:18px;font-weight:400;letter-spacing:-.01em}
 .center{text-align:center}
@@ -85,7 +88,7 @@ p{margin:0}
 .process{background:var(--bg);padding:120px 24px}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:72px}
 .step{border-top:1px solid var(--line);padding-top:28px}
-.step .n{font-size:17px;font-weight:600;color:var(--teal);margin-bottom:28px;display:block}
+.step .n{font-size:17px;font-weight:600;color:var(--accent);margin-bottom:28px;display:block}
 .step h3{font-size:24px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
 .step p{color:var(--muted);font-size:16px}
 
@@ -95,33 +98,33 @@ p{margin:0}
 .brief-intro strong{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
 .brief-intro p{color:var(--muted);font-size:16px}
 .progress{height:6px;background:#e5e5ea;border-radius:10px;overflow:hidden;margin-top:22px}
-.fill{height:100%;background:var(--teal);width:0;transition:width .25s}
+.fill{height:100%;background:var(--accent);width:0;transition:width .25s}
 .status{font-size:14px;color:var(--muted);margin-top:10px}
 .presets-wrap{margin-top:40px}
 .presets-wrap .eyebrow{margin-bottom:6px}
 .presets-wrap .help{color:var(--muted);font-size:15px}
 .presets{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 6px}
 .preset{background:var(--bg);color:var(--ink);border:0;border-radius:22px;padding:24px;text-align:left;display:flex;flex-direction:column;gap:8px;cursor:pointer;font:inherit;box-shadow:0 0 0 1px transparent;transition:box-shadow .2s,transform .2s}
-.preset:hover{box-shadow:0 0 0 1px var(--teal);transform:translateY(-2px)}
+.preset:hover{box-shadow:0 0 0 1px var(--accent);transform:translateY(-2px)}
 .preset strong{font-size:19px;font-weight:600;letter-spacing:-.02em}
 .preset span{font-size:15px;color:var(--muted)}
-#preset-msg{margin-top:8px;color:var(--teal);font-size:15px;min-height:1.4em}
+#preset-msg{margin-top:8px;color:var(--accent);font-size:15px;min-height:1.4em}
 #designer{display:block}
 .section-card{background:var(--bg);border-radius:var(--radius);padding:36px;margin:16px 0}
 .head{display:flex;gap:14px;align-items:center;margin-bottom:20px}
-.num{background:var(--bg-2);color:var(--teal);padding:6px 11px;border-radius:980px;font-weight:600;font-size:14px}
+.num{background:var(--bg-2);color:var(--accent);padding:6px 11px;border-radius:980px;font-weight:600;font-size:14px}
 .head h2{font-size:26px;font-weight:600;letter-spacing:-.025em}
 .example{font-size:15px;color:var(--muted);background:var(--bg-2);border-radius:14px;padding:12px 16px;margin:6px 0 0}
 .example b{color:var(--ink);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .chip{border:1px solid var(--line);border-radius:980px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;user-select:none;background:var(--bg);font-size:15px;transition:all .15s}
 .chip:hover{border-color:var(--ink)}
-.chip input{accent-color:var(--teal);margin:0}
-.chip:has(input:checked){background:var(--teal-tint);border-color:var(--teal);color:var(--teal-deep)}
+.chip input{accent-color:var(--accent);margin:0}
+.chip:has(input:checked){background:var(--accent-tint);border-color:var(--accent);color:var(--accent-deep)}
 .dot{display:inline-block;width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px #0000001f;flex:none}
 label.field{display:block;font-weight:500;font-size:15px;margin:20px 0 8px}
 textarea,input[type=text],input[type=url],input[type=date],input[type=email],select{width:100%;border:1px solid var(--line);border-radius:14px;padding:13px 15px;background:var(--bg);font:inherit;font-size:16px;color:var(--ink)}
-textarea:focus,input:focus,select:focus{outline:2px solid var(--teal-tint);border-color:var(--teal)}
+textarea:focus,input:focus,select:focus{outline:2px solid var(--accent-tint);border-color:var(--accent)}
 textarea{min-height:80px;resize:vertical}
 .help{font-size:14px;color:var(--muted);margin-top:8px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -134,28 +137,28 @@ textarea{min-height:80px;resize:vertical}
 .sum-row:last-child{border-bottom:0}
 .sum-row b{font-size:15px;font-weight:600}
 .sum-row p{font-size:15px;margin-top:6px}
-.pick{display:inline-block;background:var(--bg);color:var(--teal-deep);border-radius:980px;padding:5px 12px;margin:8px 6px 0 0;font-size:14px}
+.pick{display:inline-block;background:var(--bg);color:var(--accent-deep);border-radius:980px;padding:5px 12px;margin:8px 6px 0 0;font-size:14px}
 .sum-row em{color:var(--muted);font-size:15px}
 .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-#feedback{margin-top:14px;font-size:15px;color:var(--teal)}
+#feedback{margin-top:14px;font-size:15px;color:var(--accent)}
 
 /* Contact (dark) */
 .contact{background:var(--dark);color:#f5f5f7;padding:120px 24px}
-.contact .lede{color:#a1a1a6}
+.contact .lede{color:var(--dark-muted)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px}
-.card{background:#1d1d1f;border-radius:var(--radius);padding:40px}
+.card{background:var(--dark-card);border-radius:var(--radius);padding:40px}
 .card h3{font-size:28px;font-weight:600;letter-spacing:-.025em;margin-bottom:10px}
-.card p{color:#a1a1a6;margin-bottom:26px;font-size:17px}
+.card p{color:var(--dark-muted);margin-bottom:26px;font-size:17px}
 .reach{list-style:none;padding:0;margin:0}
-.reach li{padding:16px 0;border-bottom:1px solid #2c2c2e;font-size:17px}
+.reach li{padding:16px 0;border-bottom:1px solid var(--dark-line);font-size:17px}
 .reach li:last-child{border-bottom:0}
-.reach small{display:block;color:#86868b;font-size:13px;letter-spacing:.2px;margin-bottom:4px}
+.reach small{display:block;color:var(--dark-muted);font-size:13px;letter-spacing:.2px;margin-bottom:4px}
 
 /* Footer */
 footer{background:var(--bg-2);color:var(--muted);padding:40px 24px 48px;font-size:13px;line-height:1.6}
 footer .wrap{display:flex;flex-direction:column;gap:10px}
 footer b{color:var(--ink);font-size:15px;font-weight:600}
-footer a{color:var(--teal);text-decoration:none}
+footer a{color:var(--accent);text-decoration:none}
 footer a:hover{text-decoration:underline}
 
 /* Responsive */
@@ -333,7 +336,7 @@ footer a:hover{text-decoration:underline}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="center">
-      <p class="eyebrow" style="color:#2fb3c0">Get in touch</p>
+      <p class="eyebrow" style="color:#e0b060">Get in touch</p>
       <h2 class="display">Let’s design together.</h2>
       <p class="lede">Chat with us on WhatsApp for a personal design consultation, or message us on Instagram.</p>
     </div>
