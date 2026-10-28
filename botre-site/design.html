@@ -27,72 +27,81 @@
     <div class="center">
       <p class="eyebrow">Design Studio</p>
       <h1 class="display">Design your saree.</h1>
-      <p class="lede">Choose one or more options in each section, or write your own preferences. Every section is optional, and our team reviews your design before a quotation is provided.</p>
+      <p class="lede">Six short steps. Your progress is saved on this device, so you can come back any time.</p>
     </div>
 
-    <div class="brief-intro">
-      <strong>Your design brief</strong>
-      <p>Your answers are compiled into a brief you can send on WhatsApp or download. Reference photos stay on your device, so attach them in the WhatsApp chat.</p>
-      <div class="progress"><div class="fill" id="bar"></div></div>
-      <div class="status" id="status">0 of 13 design sections started</div>
-    </div>
+    <nav class="stepper" id="stepper" aria-label="Design steps">
+      <div class="step-meta"><span id="step-count">Step 1 of 6</span><span id="step-title">You &amp; delivery</span></div>
+      <div class="progress"><div class="fill" id="step-bar"></div></div>
+      <div class="status" id="status"></div>
+      <div class="step-dots" id="step-dots"></div>
+    </nav>
 
-    <div class="presets-wrap">
-      <p class="eyebrow">Start from a look</p>
-      <p class="help">Pick a starting point and adjust anything you like below, or skip this and start from scratch.</p>
-      <div class="presets" id="presets"></div>
-      <p class="help" id="preset-msg" aria-live="polite"></p>
-    </div>
+    <form id="designer" onsubmit="return false">
 
-    <form id="designer" onsubmit="return false"></form>
-
-    <section class="section-card" aria-labelledby="final-title">
-      <div class="head"><span class="num">14</span><h2 id="final-title">Final requirements &amp; contact</h2></div>
-      <div class="grid">
-        <div>
-          <label class="field" for="budget">Estimated budget</label>
-          <select id="budget">
-            <option>Need a quotation</option>
-            <option>Under LKR 50,000</option>
-            <option>LKR 50,000–100,000</option>
-            <option>LKR 100,000–200,000</option>
-            <option>LKR 200,000–400,000</option>
-            <option>LKR 400,000+</option>
-          </select>
+      <div class="step-panel" data-step="0">
+        <div class="presets-wrap">
+          <p class="eyebrow">Start from a look</p>
+          <p class="help">Pick a starting point to fill in the design steps, or skip this and start from scratch.</p>
+          <div class="presets" id="presets"></div>
+          <p class="help" id="preset-msg" aria-live="polite"></p>
         </div>
-        <div>
-          <label class="field" for="date">Preferred delivery date</label>
-          <input type="date" id="date">
-        </div>
-        <div>
-          <label class="field" for="customer">Your name</label>
-          <input type="text" id="customer" placeholder="Full name" autocomplete="name">
-        </div>
-        <div>
-          <label class="field" for="contact">Email or phone</label>
-          <input type="text" id="contact" placeholder="Your contact details" autocomplete="tel">
-        </div>
-        <div>
-          <label class="field" for="country">Delivery country</label>
-          <select id="country">
-            <option>Sri Lanka</option>
-            <option>United Kingdom</option>
-            <option>Other</option>
-          </select>
-        </div>
+        <section class="section-card">
+          <div class="head"><span class="num">01</span><h2>Your details</h2></div>
+          <p class="help">So our team can reply and send your quotation.</p>
+          <div class="grid">
+            <div>
+              <label class="field" for="customer">Your name</label>
+              <input type="text" id="customer" placeholder="Full name" autocomplete="name" required>
+            </div>
+            <div>
+              <label class="field" for="contact">Email or phone</label>
+              <input type="text" id="contact" placeholder="Your contact details" autocomplete="tel" required>
+            </div>
+            <div>
+              <label class="field" for="country">Delivery country</label>
+              <select id="country"><option>Sri Lanka</option><option>United Kingdom</option><option>Other</option></select>
+            </div>
+            <div>
+              <label class="field" for="budget">Estimated budget</label>
+              <select id="budget"><option>Need a quotation</option><option>Under LKR 50,000</option><option>LKR 50,000–100,000</option><option>LKR 100,000–200,000</option><option>LKR 200,000–400,000</option><option>LKR 400,000+</option></select>
+            </div>
+            <div>
+              <label class="field" for="date">Preferred delivery date</label>
+              <input type="date" id="date">
+            </div>
+          </div>
+          <p class="feedback-line" id="details-msg" aria-live="polite"></p>
+        </section>
       </div>
-      <label class="field" for="extra">Other design instructions</label>
-      <textarea id="extra" placeholder="Tell us anything else about your dream saree..."></textarea>
-      <div class="notice">Reference photo uploads stay on your device in this version. To share photos with BoTre, attach them manually in the WhatsApp conversation after sending your design brief.</div>
-      <div class="summary" id="summary" hidden></div>
-      <div class="buttons">
-        <button type="button" class="btn" id="whatsapp">Send Enquiry via WhatsApp ↗</button>
-        <button type="button" class="btn outline" id="review">Review My Brief</button>
-        <button type="button" class="btn outline" id="copy">Copy Design Brief</button>
-        <button type="button" class="btn outline" id="download">Download Design Brief</button>
+
+      <div class="step-panel" data-step="4">
+        <section class="section-card">
+          <div class="head"><span class="num">+</span><h2>Other instructions &amp; photos</h2></div>
+          <label class="field" for="extra">Anything else about your dream saree</label>
+          <textarea id="extra" placeholder="Tell us anything else about your dream saree..."></textarea>
+          <label class="field" for="photos">Reference photos (optional)</label>
+          <label class="upload">Select inspiration images<input type="file" id="photos" accept="image/*" multiple></label>
+          <div class="notice">Photos stay on your device in this version. Attach them in the WhatsApp chat after you send your brief.</div>
+        </section>
       </div>
-      <p class="help" id="feedback" aria-live="polite"></p>
-    </section>
+
+      <div class="step-panel" data-step="5">
+        <div class="summary" id="summary"></div>
+        <div class="buttons">
+          <button type="button" class="btn" id="whatsapp">Send Enquiry via WhatsApp ↗</button>
+          <button type="button" class="btn outline" id="copy">Copy Design Brief</button>
+          <button type="button" class="btn outline" id="download">Download Design Brief</button>
+          <button type="button" class="btn ghost" id="reset">Start over</button>
+        </div>
+        <p class="help" id="feedback" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <div class="step-nav">
+      <button type="button" class="btn ghost" id="back">← Back</button>
+      <button type="button" class="btn" id="next">Next →</button>
+    </div>
   </div>
 </section>
 </main>
@@ -147,9 +156,21 @@ const presets=[
   {name:'Festive Party Wear',desc:'Emerald green georgette with floral zari',picks:{0:['Party Wear','Festive'],1:['Georgette'],2:['Emerald Green'],3:['Dual Tone'],4:['Buttas'],5:['Floral Zari'],6:['Narrow (1–2 inches)'],7:['Floral Pallu'],8:['Silver Zari'],9:['No Personalisation'],10:['Bead Work'],11:['Standard 5.5 Metres'],12:['Classic Tassels']}}
 ];
 
+const steps=[
+  {title:'You & delivery'},
+  {title:'Occasion & fabric', sections:[0,1]},
+  {title:'Colours & pattern', sections:[2,3,4]},
+  {title:'Border, pallu & zari', sections:[5,6,7,8]},
+  {title:'Details & finish', sections:[9,10,11,12]},
+  {title:'Review & send'}
+];
+const KEY='botre-brief-v1';
 const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const form=document.querySelector('#designer');
+const v=id=>document.getElementById(id).value.trim();
+let current=0;
 
+// Build the 13 design sections into their steps
+const form=document.getElementById('designer');
 sections.forEach((s,i)=>{
   const el=document.createElement('section');
   el.className='section-card';
@@ -157,28 +178,95 @@ sections.forEach((s,i)=>{
     `<div class="chips">${s[1].map(o=>`<label class="chip"><input type="checkbox" name="choice-${i}" value="${esc(o)}">${swatches[o]?`<i class="dot" style="background:${swatches[o]}"></i>`:''}${esc(o)}</label>`).join('')}</div>`+
     `<p class="example"><b>Example:</b> ${esc(examples[i])}</p>`+
     `<label class="field" for="note-${i}">Your preference / special request</label><textarea id="note-${i}" placeholder="${esc(s[2])}"></textarea>`+
-    `<label class="field" for="ref-${i}">Reference image, Pinterest or Instagram link</label><input type="url" id="ref-${i}" placeholder="https://...">`+
-    `<label class="field" for="photo-${i}">Optional reference photo from your device</label><label class="upload">Select an inspiration image<input type="file" id="photo-${i}" accept="image/*"></label>`+
-    `<div class="help">Photo is not automatically uploaded or sent.</div>`;
+    `<label class="field" for="ref-${i}">Reference link (optional)</label><input type="url" id="ref-${i}" placeholder="https://...">`;
+  el.dataset.section=i;
   form.append(el);
 });
 
-const v=id=>document.getElementById(id).value.trim();
+// Turn the panels into steps
+const panels=[...form.querySelectorAll('.step-panel')];
+steps.forEach((st,n)=>{
+  if(n===0||n===steps.length-1) return;
+  const p=document.createElement('div');
+  p.className='step-panel';
+  p.dataset.step=n;
+  st.sections.forEach(i=>p.append(form.querySelector(`[data-section="${i}"]`)));
+  form.insertBefore(p, form.querySelector('.step-panel[data-step="4"]'));
+});
+const allPanels=[...form.querySelectorAll('.step-panel')].sort((a,b)=>a.dataset.step-b.dataset.step);
 
-function brief(){
-  return 'BoTre – CUSTOM SAREE DESIGN ENQUIRY\n\n'+
-    sections.map((s,i)=>`${i+1}. ${s[0]}\nSelections: ${[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value).join(', ')||'Designer guidance needed'}\nMy preference: ${v('note-'+i)||'Not specified'}\nReference link: ${v('ref-'+i)||'Not supplied'}\nPhoto selected: ${document.getElementById('photo-'+i).files[0]?.name||'None (send separately)'}`).join('\n\n')+
-    `\n\nBudget: ${v('budget')}\nRequired by: ${v('date')||'Flexible'}\nAdditional instructions: ${v('extra')||'None'}\nName: ${v('customer')||'Not supplied'}\nContact: ${v('contact')||'Not supplied'}\nDelivery country: ${v('country')}\n\nReference images must be attached separately in WhatsApp.`;
+// Step controls
+const dots=document.getElementById('step-dots');
+steps.forEach((st,n)=>{
+  const b=document.createElement('button');
+  b.type='button';
+  b.className='dot-step';
+  b.setAttribute('aria-label','Go to step '+(n+1)+': '+st.title);
+  b.textContent=n+1;
+  b.onclick=()=>show(n);
+  dots.append(b);
+});
+
+function sectionStarted(i){
+  return document.querySelector(`input[name="choice-${i}"]:checked`)||v('note-'+i)||v('ref-'+i);
 }
 
 function progress(){
-  const n=sections.filter((s,i)=>document.querySelector(`input[name="choice-${i}"]:checked`)||v('note-'+i)||v('ref-'+i)||document.getElementById('photo-'+i).files.length).length;
-  document.getElementById('bar').style.width=n/sections.length*100+'%';
+  const n=sections.filter((s,i)=>sectionStarted(i)).length;
   document.getElementById('status').textContent=n+' of '+sections.length+' design sections started';
 }
-document.addEventListener('input',progress);
-document.addEventListener('change',progress);
 
+function updateStepper(){
+  document.getElementById('step-count').textContent='Step '+(current+1)+' of '+steps.length;
+  document.getElementById('step-title').textContent=steps[current].title;
+  document.getElementById('step-bar').style.width=((current+1)/steps.length*100)+'%';
+  [...dots.children].forEach((b,n)=>b.classList.toggle('on',n===current));
+  document.getElementById('back').hidden=current===0;
+  const next=document.getElementById('next');
+  next.hidden=current===steps.length-1;
+}
+
+function show(n){
+  current=Math.max(0,Math.min(n,steps.length-1));
+  allPanels.forEach(p=>{p.hidden=Number(p.dataset.step)!==current});
+  updateStepper();
+  if(current===steps.length-1) renderSummary();
+  save();
+  document.getElementById('stepper').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.getElementById('next').onclick=()=>{
+  if(current===0){
+    if(!v('customer')||!v('contact')){
+      document.getElementById('details-msg').textContent='Please add your name and email or phone so our team can reply.';
+      return;
+    }
+    document.getElementById('details-msg').textContent='';
+  }
+  show(current+1);
+};
+document.getElementById('back').onclick=()=>show(current-1);
+
+// Brief text
+function brief(){
+  const photos=[...document.getElementById('photos').files].map(f=>f.name);
+  return 'BoTre – CUSTOM SAREE DESIGN ENQUIRY\n\n'+
+    sections.map((s,i)=>`${i+1}. ${s[0]}\nSelections: ${[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value).join(', ')||'Designer guidance needed'}\nMy preference: ${v('note-'+i)||'Not specified'}\nReference link: ${v('ref-'+i)||'Not supplied'}`).join('\n\n')+
+    `\n\nBudget: ${v('budget')}\nRequired by: ${v('date')||'Flexible'}\nAdditional instructions: ${v('extra')||'None'}\nName: ${v('customer')||'Not supplied'}\nContact: ${v('contact')||'Not supplied'}\nDelivery country: ${v('country')}\nReference photos: ${photos.length?photos.join(', '):'None (send in WhatsApp)'}\n\nReference images must be attached separately in WhatsApp.`;
+}
+
+function renderSummary(){
+  const box=document.getElementById('summary');
+  box.innerHTML=sections.map((s,i)=>{
+    const picks=[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value);
+    const note=v('note-'+i);
+    return `<div class="sum-row"><b>${String(i+1).padStart(2,'0')} · ${esc(s[0])}</b>`+
+      `<div>${picks.length?picks.map(p=>`<span class="pick">${esc(p)}</span>`).join(''):'<em>Designer guidance needed</em>'}</div>`+
+      (note?`<p>${esc(note)}</p>`:'')+`</div>`;
+  }).join('');
+}
+
+// Presets
 const presetBox=document.getElementById('presets');
 presets.forEach(p=>{
   const b=document.createElement('button');
@@ -188,7 +276,6 @@ presets.forEach(p=>{
   b.onclick=()=>applyPreset(p);
   presetBox.append(b);
 });
-
 function applyPreset(p){
   document.querySelectorAll('input[type=checkbox][name^="choice-"]').forEach(c=>c.checked=false);
   Object.entries(p.picks).forEach(([i,opts])=>opts.forEach(o=>{
@@ -196,22 +283,41 @@ function applyPreset(p){
     if(c) c.checked=true;
   }));
   progress();
-  document.getElementById('preset-msg').textContent=`"${p.name}" applied. Adjust anything you like in the sections below.`;
+  save();
+  document.getElementById('preset-msg').textContent=`"${p.name}" applied. Adjust anything you like in the steps that follow.`;
 }
 
-document.getElementById('review').onclick=()=>{
-  const box=document.getElementById('summary');
-  box.innerHTML=sections.map((s,i)=>{
-    const picks=[...document.querySelectorAll(`input[name="choice-${i}"]:checked`)].map(x=>x.value);
-    const note=v('note-'+i);
-    return `<div class="sum-row"><b>${String(i+1).padStart(2,'0')} · ${esc(s[0])}</b>`+
-      `<div>${picks.length?picks.map(p=>`<span class="pick">${esc(p)}</span>`).join(''):'<em>Designer guidance needed</em>'}</div>`+
-      (note?`<p>${esc(note)}</p>`:'')+`</div>`;
-  }).join('');
-  box.hidden=false;
-  box.scrollIntoView({behavior:'smooth',block:'nearest'});
-};
+// Save and restore progress on this device only
+function collect(){
+  const checks=[...document.querySelectorAll('input[type=checkbox][name^="choice-"]:checked')].map(c=>[c.name,c.value]);
+  const fields={};
+  document.querySelectorAll('#designer input[type=text],#designer input[type=url],#designer input[type=date],#designer textarea,#designer select').forEach(el=>{if(el.id) fields[el.id]=el.value;});
+  return {checks,fields,step:current};
+}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(collect()));}catch(e){}
+}
+function restore(){
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(!d) return;
+    d.checks.forEach(([n,val])=>{
+      const c=[...document.querySelectorAll(`input[name="${n}"]`)].find(x=>x.value===val);
+      if(c) c.checked=true;
+    });
+    Object.entries(d.fields||{}).forEach(([id,val])=>{const el=document.getElementById(id); if(el) el.value=val;});
+    if(typeof d.step==='number') current=Math.min(d.step,steps.length-1);
+  }catch(e){}
+}
 
+document.addEventListener('input',()=>{progress();save();});
+document.addEventListener('change',()=>{progress();save();});
+
+restore();
+progress();
+show(current);
+
+// Actions
 document.getElementById('whatsapp').onclick=()=>{
   const msg=brief();
   if(msg.length>7000){
@@ -221,7 +327,6 @@ document.getElementById('whatsapp').onclick=()=>{
   }
   window.open('https://wa.me/94707052118?text='+encodeURIComponent(msg),'_blank','noopener');
 };
-
 document.getElementById('copy').onclick=async()=>{
   try{
     await navigator.clipboard.writeText(brief());
@@ -230,13 +335,17 @@ document.getElementById('copy').onclick=async()=>{
     document.getElementById('feedback').textContent='Copy is unavailable here. Please download your design brief instead.';
   }
 };
-
 document.getElementById('download').onclick=()=>{
   const blob=new Blob([brief()],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
   a.download='BoTre-Custom-Saree-Design.txt';
   a.click();
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+document.getElementById('reset').onclick=()=>{
+  if(!confirm('Clear everything and start again?')) return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  location.reload();
 };
 </script>
 <script src="motion.js"></script>

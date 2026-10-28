@@ -290,3 +290,19 @@ h1,h2,h3,.preset strong,.head h2,.tile h3,.card h3,.feature h3,.brief-intro stro
 .contact-grid{gap:48px}
 
 .summary,.notice{background:var(--bg-2)}
+
+/* Design steps */
+.stepper{margin:48px 0 8px;padding:20px 0 0}
+.step-meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:14px;color:var(--muted);margin-bottom:12px}
+.step-meta #step-title{font-family:var(--serif);font-size:24px;color:var(--ink);font-weight:500}
+.step-dots{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.dot-step{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--muted);font:500 14px var(--font);cursor:pointer;transition:all .2s}
+.dot-step:hover{border-color:var(--ink);color:var(--ink)}
+.dot-step.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.step-nav{display:flex;justify-content:space-between;gap:12px;margin:24px 0 0}
+.step-nav .btn{min-width:140px}
+.btn.ghost{background:transparent;color:var(--muted);box-shadow:none;padding-left:0;padding-right:0}
+.btn.ghost:hover{color:var(--ink);background:transparent}
+.feedback-line{color:var(--accent);font-size:15px;margin-top:12px;min-height:1.4em}
+.step-panel[hidden]{display:none}
+#status{margin-top:8px}
