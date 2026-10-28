@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#531d35">
+<link rel="icon" type="image/jpeg" href="assets/botre-logo.jpg">
 <meta name="description" content="BoTre – Bold with Trendy. Personalised Kanchipuram bridal sarees, pattu sarees and customised lehengas, designed exclusively for you. Sri Lanka & UK.">
 <title>BoTre | Design Your Dream Saree</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +35,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0}
 p{margin:0}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:10;background:var(--wine);color:#fff;box-shadow:0 2px 14px #31172422}
-.bar{max-width:1140px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{text-decoration:none;display:flex;align-items:baseline;gap:10px}
-.brand b{font:600 30px var(--serif);letter-spacing:2px}
-.brand span{font-size:11px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase}
-.nav{display:flex;gap:22px;flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:14px;letter-spacing:.5px;color:#f5e6dc;opacity:.9}
-.nav a:hover{opacity:1;color:var(--gold-light)}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--wine);color:#fff;padding:14px 22px;border-radius:10px;font:500 15px var(--sans);letter-spacing:.3px;cursor:pointer;text-decoration:none;transition:transform .15s,background .2s}
@@ -133,7 +126,7 @@ textarea{min-height:75px;resize:vertical}
 .reach small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
 
 footer{background:var(--wine-deep);color:#f7e7df;padding:34px 20px;text-align:center;font-size:14px}
-footer b{font:600 26px var(--serif);letter-spacing:2px;color:#fff}
+.footer-logo{width:200px;max-width:60%;height:auto;margin:0 auto 14px;border-radius:20px}
 footer .tag{color:var(--gold-light);letter-spacing:2px;font-size:12px;text-transform:uppercase;margin:6px 0 14px}
 footer a{color:var(--gold-light)}
 
@@ -165,14 +158,12 @@ footer a{color:var(--gold-light)}
   .contact{grid-template-columns:1fr}
 }
 @media(max-width:650px){
-  .nav{display:none}
   .grid{grid-template-columns:1fr}
   .section{padding:17px}
   .steps{grid-template-columns:1fr}
   .strip .container{grid-template-columns:1fr}
   .strip .item{border-left:0;border-top:1px solid #b88a4b44}
   .strip .item:first-child{border-top:0}
-  .brand span{display:none}
   section.block{padding:52px 16px}
   .head h2{font-size:22px}
   .presets{grid-template-columns:1fr}
@@ -183,17 +174,6 @@ footer a{color:var(--gold-light)}
 </head>
 <body>
 
-<header class="site-header">
-  <div class="bar">
-    <a class="brand" href="#top" aria-label="BoTre home"><b>BoTre</b><span>Bold with Trendy</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#process">How it works</a>
-      <a href="#studio">Design Studio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
 
 <main id="top">
 
@@ -386,7 +366,7 @@ footer a{color:var(--gold-light)}
 </main>
 
 <footer>
-  <b>BoTre</b>
+  <img class="footer-logo" src="assets/botre-logo.jpg" alt="BoTre – Bold with Trendy" width="1772" height="1772">
   <div class="tag">Bold with Trendy · Where tradition meets trend</div>
   <div>WhatsApp: <a href="https://wa.me/94707052118" target="_blank" rel="noopener">+94 70 705 2118</a> · Sri Lanka &amp; UK enquiries</div>
   <div style="margin-top:10px;opacity:.7">© BoTre. All rights reserved.</div>
