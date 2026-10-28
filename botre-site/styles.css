@@ -13,7 +13,7 @@
   --dark-line:#74763f;
   --dark-muted:#d9d1bb;
   --radius:28px;
-  --serif:'Playfair Display',Georgia,serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
   --label:'Cinzel',Georgia,serif;
   --font:'Lora',Georgia,serif;
 }
@@ -240,3 +240,16 @@ html.js .reveal.in{opacity:1;transform:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   html.js .reveal{opacity:1;transform:none}
 }
+
+/* Paisley pattern backgrounds */
+.pattern{position:relative;isolation:isolate;overflow:hidden}
+.pattern::before{content:"";position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;pointer-events:none}
+.pattern-orange::before{background-image:url(assets/patterns/paisley-orange.webp);opacity:.09}
+.pattern-red::before{background-image:url(assets/patterns/paisley-red.webp);opacity:.10}
+.cta-card.pattern::before{opacity:1;background-image:url(assets/patterns/paisley-red.webp)}
+
+/* Light, elegant headline serif (Cormorant Garamond) */
+h1,h2,h3,.preset strong,.head h2,.tile h3,.card h3,.feature h3,.brief-intro strong,.step h3,.trust-line,.hero-copy h1{font-weight:500}
+.display{font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05}
+.hero-copy h1{font-weight:400;font-size:clamp(44px,6.4vw,80px);line-height:1.05}
+.tile h3{font-size:clamp(30px,3.4vw,44px)}
