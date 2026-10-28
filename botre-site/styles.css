@@ -266,3 +266,27 @@ h1,h2,h3,.preset strong,.head h2,.tile h3,.card h3,.feature h3,.brief-intro stro
   .hero-copy h1{font-size:clamp(26px,7.4vw,34px)}
   .hero-logo{top:18px;left:18px}
 }
+
+/* Minimal site-wide: quieter headings, image-first tiles, text links, light contact */
+.display{font-size:clamp(32px,4.2vw,52px);font-weight:400;letter-spacing:0;line-height:1.1}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted)}
+.eyebrow{font-size:11px;letter-spacing:.24em;margin-bottom:16px}
+
+.tile,.feature{background:transparent;border-radius:0}
+.tile-media{border-radius:var(--radius)}
+.tile-body{padding:24px 0 0;align-items:flex-start}
+.tile p{font-size:16px}
+
+.gal-item,.story{border-radius:var(--radius)}
+
+.contact{background:var(--bg);color:var(--ink);padding-top:110px;padding-bottom:110px}
+.contact .lede{color:var(--muted)}
+.contact .eyebrow{color:var(--accent)!important}
+.contact .card{background:transparent;border-radius:0;padding:32px 0;border-top:1px solid var(--line)}
+.contact .card h3{color:var(--ink)}
+.contact .card p{color:var(--muted)}
+.reach li{border-bottom:1px solid var(--line);color:var(--ink)}
+.reach small{color:var(--muted)}
+.contact-grid{gap:48px}
+
+.summary,.notice{background:var(--bg-2)}
